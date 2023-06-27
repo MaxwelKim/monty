@@ -10,10 +10,10 @@
 #include <ctype.h>
 
 /**
- * struct stack_s - represents a stack
- * @n: represents an integer
- * @prev: shows the previous element of the stack
- * @next: shows the next element of the 
+ * struct stack_s - doubly linked list representation of a stack (or queue)
+ * @n: integer
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
@@ -64,23 +64,23 @@ typedef struct instruction_s
 extern global_t vglo;
 
 /* opcode_instructuions*/
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **doubly, unsigned int cline);
 void _pop(stack_t **doubly, unsigned int cline);
-void _push(stack_t **stack, unsigned int line_number);
-void _pstr(stack_t **doubly, unsigned int cline);
-void _rotl(stack_t **doubly, unsigned int cline);
-void _rotr(stack_t **doubly, unsigned int cline);
-void _pall(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **doubly, unsigned int cline);
 void _queue(stack_t **doubly, unsigned int cline);
 void _stack(stack_t **doubly, unsigned int cline);
-void _div(stack_t **doubly, unsigned int cline);
-void _mul(stack_t **doubly, unsigned int cline);
-void _mod(stack_t **doubly, unsigned int cline)
 void _add(stack_t **doubly, unsigned int cline);
 void _nop(stack_t **doubly, unsigned int cline);
 void _sub(stack_t **doubly, unsigned int cline);
+void _div(stack_t **doubly, unsigned int cline);
+void _mul(stack_t **doubly, unsigned int cline);
+void _mod(stack_t **doubly, unsigned int cline);
 void _pchar(stack_t **doubly, unsigned int cline);
+void _pstr(stack_t **doubly, unsigned int cline);
+void _rotl(stack_t **doubly, unsigned int cline);
+void _rotr(stack_t **doubly, unsigned int cline);
 
 /*get function*/
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
